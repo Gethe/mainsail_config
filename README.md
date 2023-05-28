@@ -1,14 +1,8 @@
-# RatOS Configuration
+This is my custom Klipper config. It is based on the [RatOS config], and tweaked
+for my own purposes based on work by [mainsail-crew], [mjonuschat], [th33xitus], and more, along with some of my own.
 
-This is the repository for the [RatOS](os.ratrig.com) modular configuration.
 
-## Contributing
-
-All non-hotfix pull requests (meaning additions, enhancements and features) should be submitted against the development branch.
-Bug fixes should be submitted against the active branch.
-
-## Help and support
-
-Please use the unofficial Rat Rig discord for help and support. Only create an issue if you have found a bug and can describe how to reproduce it, feature requests and discussions should happen in the #ratos-development channel on discord.
-
-<a href="http://discord.gg/ratrig" target="_blank" rel="noopener noreferrer" style="margin-left: 5px;"><img src="https://img.shields.io/discord/582187371529764864?color=%235865F2&amp;label=discord&amp;logo=discord&amp;logoColor=white&amp;style=flat" alt="discord"></a>
+[RatOS config]: https://github.com/Rat-OS/RatOS-configuration
+[mainsail-crew]: https://github.com/mainsail-crew/mainsail-config
+[mjonuschat]: https://github.com/mjonuschat/voron-modular-config
+[th33xitus]: https://github.com/th33xitus/kiauh/wiki/How-to-autocommit-config-changes-to-github%3F
