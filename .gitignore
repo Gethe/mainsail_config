@@ -1,2 +1,5 @@
 mcu-detection.cfg
 .DS_Store
+
+printer.cfg
+moonraker.conf
