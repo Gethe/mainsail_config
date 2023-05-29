@@ -18,13 +18,13 @@ install_printer_config()
 {
     report_status "Copying printer configuration"
     PRINTER_CFG="/home/pi/printer_data/config/printer.cfg"
-    tail -n +2 /home/pi/printer_data/config/RatOS/templates/initial-printer.template.cfg > $PRINTER_CFG
+    tail -n +2 /home/pi/printer_data/config/main/templates/initial-printer.template.cfg > $PRINTER_CFG
 }
 
 install_udev_rules()
 {
     report_status "Installing udev rules"
-    sudo ln -s /home/pi/printer_data/config/RatOS/boards/*/*.rules /etc/udev/rules.d/
+    sudo ln -s /home/pi/printer_data/config/main/boards/*/*.rules /etc/udev/rules.d/
 }
 
 verify_ready()
