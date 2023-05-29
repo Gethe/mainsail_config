@@ -135,6 +135,15 @@ compile_mellow_fly_sht_36() {
     cp /home/pi/klipper/out/klipper.bin /home/pi/printer_data/config/firmware_binaries/firmware-mellow-fly-sht-36.bin
 }
 
+compile_btt_skr_mini_e3_20() {
+    echo "Compiling firmware for BTT SKR E3 Mini V2.0"
+    cp -f /home/pi/printer_data/config/main/boards/btt-skr-mini-e3-20/firmware.config /home/pi/klipper/.config
+    make olddefconfig
+    make clean
+    make
+    cp /home/pi/klipper/out/klipper.bin /home/pi/printer_data/config/firmware_binaries/firmware-btt-skr-mini-e3-20.bin
+}
+
 compile_btt_skr_mini_e3_30() {
     echo "Compiling firmware for BTT SKR E3 Mini V3.0"
     cp -f /home/pi/printer_data/config/main/boards/btt-skr-mini-e3-30/firmware.config /home/pi/klipper/.config
@@ -199,6 +208,7 @@ compile_btt_ebb42_12
 compile_btt_ebb36_12
 compile_mellow_fly_sht_42
 compile_mellow_fly_sht_36
+compile_btt_skr_mini_e3_20
 compile_btt_skr_mini_e3_30
 compile_btt_skr_3
 compile_prusa_buddy
