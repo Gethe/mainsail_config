@@ -94,17 +94,17 @@ register_ratos_homing()
 install_hooks()
 {
     report_status "Installing git hooks"
-	if [[ ! -e /home/pi/printer_data/config/main/.git/hooks/post-merge ]]
+	if [[ ! -e /home/pi/mainsail_config/.git/hooks/post-merge ]]
 	then
- 	   ln -s /home/pi/printer_data/config/main/scripts/ratos-post-merge.sh /home/pi/printer_data/config/main/.git/hooks/post-merge
+ 	   ln -s /home/pi/mainsail_config/scripts/ratos-post-merge.sh /home/pi/mainsail_config/.git/hooks/post-merge
 	fi
 	if [[ ! -e /home/pi/klipper/.git/hooks/post-merge ]]
 	then
- 	   ln -s /home/pi/printer_data/config/main/scripts/klipper-post-merge.sh /home/pi/klipper/.git/hooks/post-merge
+ 	   ln -s /home/pi/mainsail_config/scripts/klipper-post-merge.sh /home/pi/klipper/.git/hooks/post-merge
 	fi
 	if [[ ! -e /home/pi/moonraker/.git/hooks/post-merge ]]
 	then
- 	   ln -s /home/pi/printer_data/config/main/scripts/moonraker-post-merge.sh /home/pi/moonraker/.git/hooks/post-merge
+ 	   ln -s /home/pi/mainsail_config/scripts/moonraker-post-merge.sh /home/pi/moonraker/.git/hooks/post-merge
 	fi
 }
 
@@ -144,9 +144,9 @@ ensure_sudo_command_whitelisting()
 	fi
 	touch /tmp/030-ratos-githooks
 	cat << '#EOF' > /tmp/030-ratos-githooks
-pi  ALL=(ALL) NOPASSWD: /home/pi/printer_data/config/main/scripts/ratos-update.sh
-pi  ALL=(ALL) NOPASSWD: /home/pi/printer_data/config/main/scripts/klipper-mcu-update.sh
-pi  ALL=(ALL) NOPASSWD: /home/pi/printer_data/config/main/scripts/moonraker-update.sh
+pi  ALL=(ALL) NOPASSWD: /home/pi/mainsail_config/scripts/ratos-update.sh
+pi  ALL=(ALL) NOPASSWD: /home/pi/mainsail_config/scripts/klipper-mcu-update.sh
+pi  ALL=(ALL) NOPASSWD: /home/pi/mainsail_config/scripts/moonraker-update.sh
 #EOF
 
 	$sudo chown root:root /tmp/030-ratos-githooks
@@ -158,7 +158,7 @@ pi  ALL=(ALL) NOPASSWD: /home/pi/printer_data/config/main/scripts/moonraker-upda
 	then
 		touch /tmp/031-ratos-change-hostname
 		cat << '#EOF' > /tmp/031-ratos-change-hostname
-pi  ALL=(ALL) NOPASSWD: /home/pi/printer_data/config/main/scripts/change-hostname-as-root.sh
+pi  ALL=(ALL) NOPASSWD: /home/pi/mainsail_config/scripts/change-hostname-as-root.sh
 #EOF
 
 		$sudo chown root:root /tmp/031-ratos-change-hostname

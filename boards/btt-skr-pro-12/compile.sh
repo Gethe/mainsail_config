@@ -5,7 +5,7 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-cp -f /home/pi/printer_data/config/main/boards/btt-skr-pro-12/firmware.config /home/pi/klipper/.config
+cp -f /home/pi/mainsail_config/boards/btt-skr-pro-12/firmware.config /home/pi/klipper/.config
 pushd /home/pi/klipper
 make olddefconfig
 make clean

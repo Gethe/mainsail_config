@@ -6,14 +6,14 @@ fi
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-source /home/pi/printer_data/config/main/scripts/ratos-common.sh
-source /home/pi/printer_data/config/main/scripts/moonraker-ensure-policykit-rules.sh
+source /home/pi/mainsail_config/scripts/ratos-common.sh
+source /home/pi/mainsail_config/scripts/moonraker-ensure-policykit-rules.sh
 
 update_symlinks()
 {
   echo "Updating RatOS device symlinks.."
   rm /etc/udev/rules.d/98-*.rules
-  ln -s /home/pi/printer_data/config/main/boards/*/*.rules /etc/udev/rules.d/
+  ln -s /home/pi/mainsail_config/boards/*/*.rules /etc/udev/rules.d/
 }
 
 restart_klipper()

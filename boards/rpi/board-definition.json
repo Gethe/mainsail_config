@@ -4,7 +4,7 @@
 	"manufacturer": "Raspberry",
 	"isHost": true,
 	"serialPath": "/tmp/klipper_host_mcu",
-	"firmwareBinaryName": "~/klipper/out/klipper.elf",
+	"firmwareBinaryName": "/home/pi/klipper/out/klipper.elf",
 	"compileScript": "compile.sh",
 	"flashScript": "flash.sh",
 	"documentationLink": "https://os.ratrig.com/docs/boards/pi"

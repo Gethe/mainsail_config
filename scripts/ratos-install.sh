@@ -17,21 +17,24 @@ install_dependencies()
 install_printer_config()
 {
     report_status "Copying printer configuration"
-    PRINTER_CFG="/home/pi/printer_data/config/printer.cfg"
-    tail -n +2 /home/pi/printer_data/config/main/templates/initial-printer.template.cfg > $PRINTER_CFG
+
+    ln -sf /home/pi/mainsail_config/templates/initial-printer.template.cfg /home/pi/printer_data/config/main.cfg
+    echo "[include main.cfg]" > /home/pi/printer_data/config/printer.cfg
+
+    ln -sf /home/pi/mainsail_config/templates/moonraker.template.conf /home/pi/printer_data/config/moonraker.conf
 }
 
 install_udev_rules()
 {
     report_status "Installing udev rules"
-    sudo ln -s /home/pi/printer_data/config/main/boards/*/*.rules /etc/udev/rules.d/
+    sudo ln -s /home/pi/mainsail_config/boards/*/*.rules /etc/udev/rules.d/
 }
 
 verify_ready()
 {
     if [ "$EUID" -eq 0 ]; then
         echo "This script must not run as root"
-        exit -1
+        exit 1
     fi
 }
 

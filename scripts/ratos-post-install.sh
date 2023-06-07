@@ -2,13 +2,13 @@
 # This script install additional dependencies
 # for the v-core 3 klipper setup.
 
-source /home/pi/printer_data/config/main/scripts/ratos-common.sh
+source /home/pi/mainsail_config/scripts/ratos-common.sh
 
 verify_ready()
 {
     if [ "$EUID" -eq 0 ]; then
         echo "This script must not run as root"
-        exit -1
+        exit 1
     fi
 }
 

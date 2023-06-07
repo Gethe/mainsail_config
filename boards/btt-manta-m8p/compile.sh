@@ -3,7 +3,7 @@ if [ "$EUID" -ne 0 ]
   then echo "ERROR: Please run as root"
   exit
 fi
-cp -f /home/pi/printer_data/config/main/boards/btt-manta-m8p/firmware.config /home/pi/klipper/.config
+cp -f /home/pi/mainsail_config/boards/btt-manta-m8p/firmware.config /home/pi/klipper/.config
 pushd /home/pi/klipper
 make olddefconfig
 make clean

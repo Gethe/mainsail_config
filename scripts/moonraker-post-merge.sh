@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo /home/pi/printer_data/config/main/scripts/moonraker-update.sh
+sudo /home/pi/mainsail_config/scripts/moonraker-update.sh

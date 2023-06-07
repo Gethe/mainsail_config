@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo /home/pi/printer_data/config/main/scripts/change-hostname-as-root.sh $1
+sudo /home/pi/mainsail_config/scripts/change-hostname-as-root.sh $1

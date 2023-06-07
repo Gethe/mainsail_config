@@ -11,6 +11,6 @@ if [ ! -d "${outdir}" ]; then
     mkdir "${outdir}"
 fi
 
-~/klipper/scripts/graph_accelerometer.py \
+/home/pi/klipper/scripts/graph_accelerometer.py \
     -c /tmp/raw_data_axis*_belt-tension-*.csv \
     -o "${outdir}/belt-tension-resonances-$( date +'%Y-%m-%d-%H%M%S' ).png"

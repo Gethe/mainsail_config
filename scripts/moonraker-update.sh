@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /home/pi/printer_data/config/main/scripts/moonraker-ensure-policykit-rules.sh
+source /home/pi/mainsail_config/scripts/moonraker-ensure-policykit-rules.sh
 ensure_moonraker_policiykit_rules
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
