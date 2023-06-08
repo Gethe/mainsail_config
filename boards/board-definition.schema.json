@@ -18,7 +18,7 @@
 			"type": "string"
 		},
 		"firmwareBinaryName": {
-			"description": "The firmware binary filename in RatOS",
+			"description": "The firmware binary filename",
 			"type": "string"
 		},
 		"compileScript": {
@@ -38,11 +38,11 @@
 			"type": "string"
 		},
 		"isToolboard": {
-			"description": "Whether this controlboard is a toolboard",
+			"description": "Whether this board is a toolboard",
 			"type": "boolean"
 		},
 		"isHost": {
-			"description": "Whether this is the host computer RatOS is running on (used for Pi)",
+			"description": "Whether this board is the host computer (used for Pi)",
 			"type": "boolean"
 		},
 		"disableAutoFlash": {

@@ -21,7 +21,7 @@ symlink_klippy_extensions()
 	then
 		echo $symlink_result | jq -r '.result.data.json'
 	else
-		echo "Failed to symlink klippy extensions. Is the RatOS configurator running?"
+		echo "Failed to symlink klippy extensions. Is the Configurator running?"
 		exit 1
 	fi
 }
@@ -35,7 +35,7 @@ symlink_moonraker_extensions()
 	then
 		echo $symlink_result | jq -r '.result.data.json'
 	else
-		echo "Failed to symlink moonraker extensions. Is the RatOS configurator running?"
+		echo "Failed to symlink moonraker extensions. Is the Configurator running?"
 		exit 1
 	fi
 }

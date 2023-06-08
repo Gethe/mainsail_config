@@ -10,7 +10,7 @@ source $SCRIPT_DIR/config_common.sh
 
 install_dependencies()
 {
-    report_status "Installing RatOS dependencies"
+    report_status "Installing dependencies"
     sudo apt-get update && sudo apt-get install -y $PKGLIST
 }
 

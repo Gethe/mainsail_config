@@ -55,7 +55,7 @@ register_klippy_extension() {
 	ERROR_IF_EXISTS=$4
 	[[ "$ERROR_IF_EXISTS" == "false" ]] && ERROR_IF_EXISTS="false" || ERROR_IF_EXISTS="true"
 
-    report_status "Registering klippy extension '$EXT_NAME' with the RatOS Configurator..."
+    report_status "Registering klippy extension '$EXT_NAME' with the Configurator..."
     if [ ! -e "$EXT_PATH/$EXT_FILE" ]
     then
         echo "ERROR: The file you're trying to register does not exist"
@@ -69,7 +69,7 @@ register_klippy_extension() {
     then
         echo "Registered $EXT_NAME successfully."
     else
-        echo "ERROR: Failed to register $EXT_NAME. Is the RatOS configurator running?"
+        echo "ERROR: Failed to register $EXT_NAME. Is the Configurator running?"
         exit 1
     fi
 }
@@ -122,7 +122,6 @@ moonraker-obico
 sonar
 crowsnest
 octoeverywhere
-ratos-configurator
 #EOF
 
 		report_status "Configurator added to moonraker service permissions"
@@ -137,7 +136,7 @@ ensure_sudo_command_whitelisting()
 		sudo=""
 	fi
     report_status "Updating whitelisted commands"
-	# Whitelist RatOS git hook scripts
+	# Whitelist git hook scripts
 	if [[ -e /etc/sudoers.d/030-ratos-githooks ]]
 	then
 		$sudo rm /etc/sudoers.d/030-ratos-githooks

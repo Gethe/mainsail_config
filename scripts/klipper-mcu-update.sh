@@ -21,7 +21,7 @@ if [ $extensions_success -eq 0 ]
 then
     echo $extensions_result | jq -r '.result.data.json'
 else
-    echo "Failed to symlink extensions, ignore this if not on RatOS 2.0 yet"
+    echo "Failed to symlink extensions"
 fi
 
 echo "##### Symlinking moonraker extensions"
@@ -31,5 +31,5 @@ if [ $configurator_success -eq 0 ]
 then
     echo $symlink_result | jq -r '.result.data.json'
 else
-    echo "Failed to symlink moonraker extensions. Is the RatOS configurator running? Ignore this if not on RatOS 2.0 yet"
+    echo "Failed to symlink moonraker extensions. Is the Configurator running?"
 fi

@@ -11,7 +11,7 @@ source /home/pi/mainsail_config/scripts/moonraker-ensure-policykit-rules.sh
 
 update_symlinks()
 {
-  echo "Updating RatOS device symlinks.."
+  echo "Updating device symlinks.."
   rm /etc/udev/rules.d/98-*.rules
   ln -s /home/pi/mainsail_config/boards/*/*.rules /etc/udev/rules.d/
 }
@@ -30,7 +30,7 @@ symlink_klippy_extensions()
 	then
 		echo $symlink_result | jq -r '.result.data.json'
 	else
-		echo "Failed to symlink klippy extensions. Is the RatOS configurator running? Ignore this if not on RatOS 2.0 yet"
+		echo "Failed to symlink klippy extensions. Is the Configurator running?"
 	fi
 }
 
@@ -43,7 +43,7 @@ symlink_moonraker_extensions()
 	then
 		echo $symlink_result | jq -r '.result.data.json'
 	else
-		echo "Failed to symlink moonraker extensions. Is the RatOS configurator running? Ignore this if not on RatOS 2.0 yet"
+		echo "Failed to symlink moonraker extensions. Is the Configurator running?"
 	fi
 }
 # Run update symlinks
