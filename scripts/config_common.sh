@@ -96,7 +96,7 @@ install_hooks()
     report_status "Installing git hooks"
 	if [[ ! -e /home/pi/mainsail_config/.git/hooks/post-merge ]]
 	then
- 	   ln -s /home/pi/mainsail_config/scripts/ratos-post-merge.sh /home/pi/mainsail_config/.git/hooks/post-merge
+ 	   ln -s /home/pi/mainsail_config/scripts/config_post_merge.sh /home/pi/mainsail_config/.git/hooks/post-merge
 	fi
 	if [[ ! -e /home/pi/klipper/.git/hooks/post-merge ]]
 	then
@@ -144,7 +144,7 @@ ensure_sudo_command_whitelisting()
 	fi
 	touch /tmp/030-ratos-githooks
 	cat << '#EOF' > /tmp/030-ratos-githooks
-pi  ALL=(ALL) NOPASSWD: /home/pi/mainsail_config/scripts/ratos-update.sh
+pi  ALL=(ALL) NOPASSWD: /home/pi/mainsail_config/scripts/config_update.sh
 pi  ALL=(ALL) NOPASSWD: /home/pi/mainsail_config/scripts/klipper-mcu-update.sh
 pi  ALL=(ALL) NOPASSWD: /home/pi/mainsail_config/scripts/moonraker-update.sh
 #EOF

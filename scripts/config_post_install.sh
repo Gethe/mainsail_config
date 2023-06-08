@@ -2,7 +2,7 @@
 # This script install additional dependencies
 # for the v-core 3 klipper setup.
 
-source /home/pi/mainsail_config/scripts/ratos-common.sh
+source /home/pi/mainsail_config/scripts/config_common.sh
 
 verify_ready()
 {

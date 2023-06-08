@@ -4,7 +4,7 @@ source /home/pi/mainsail_config/scripts/moonraker-ensure-policykit-rules.sh
 ensure_moonraker_policiykit_rules
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-source $SCRIPT_DIR/ratos-common.sh
+source $SCRIPT_DIR/config_common.sh
 
 ensure_service_permission
 
