@@ -34,8 +34,8 @@ install_printer_config
 install_udev_rules
 install_dependencies
 
-ensure_moonraker_policiykit_rules
-
 install_gcode_shell_command
 install_ratos_homing
+
+ensure_moonraker_policiykit_rules
 

@@ -8,7 +8,6 @@ import shlex
 import subprocess
 import logging
 
-
 class ShellCommand:
     def __init__(self, config):
         self.name = config.get_name().split()[-1]
@@ -46,9 +45,8 @@ class ShellCommand:
         self.gcode.respond_info(data)
 
     cmd_RUN_SHELL_COMMAND_help = "Run a linux shell command"
-
     def cmd_RUN_SHELL_COMMAND(self, params):
-        gcode_params = params.get('PARAMS', '')
+        gcode_params = params.get('PARAMS','')
         gcode_params = shlex.split(gcode_params)
         reactor = self.printer.get_reactor()
         try:
