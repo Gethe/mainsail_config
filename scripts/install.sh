@@ -18,7 +18,7 @@ install_printer_config() {
 
 install_udev_rules() {
     report_status "Installing udev rules"
-    sudo ln -s /home/pi/mainsail_config/boards/*/*.rules /etc/udev/rules.d/
+    sudo ln -sf /home/pi/mainsail_config/boards/*/*.rules /etc/udev/rules.d/
 }
 
 install_dependencies() {
