@@ -36,6 +36,12 @@ install_theme() {
     sudo -u pi bash ~/mainsail_theme/scripts/install.sh
 }
 
+install_linear_movement() {
+    report_status "Installing Klipper Linear Movement"
+    cd ~ && git clone https://github.com/worksasintended/klipper_linear_movement_analysis.git
+    sudo -u pi bash ~/klipper_linear_movement_analysis/install.sh
+}
+
 # Force script to exit if an error occurs
 set -xe
 
@@ -45,6 +51,7 @@ install_udev_rules
 install_dependencies
 
 install_theme
+install_linear_movement
 
 install_gcode_shell_command
 install_ratos_homing
