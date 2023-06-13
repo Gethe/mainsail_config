@@ -1,6 +1,8 @@
 #!/bin/bash
 
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 KLIPPY_PATH=$(realpath "$SCRIPT_DIR"/../klippy)
+
 install_klippy_extension() {
     EXT_NAME=$1
     EXT_PATH=$2
