@@ -3,9 +3,7 @@
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 PKGLIST="python3-numpy python3-matplotlib jq curl"
 
-# shellcheck source=utilities.sh
 source "$SCRIPT_DIR"/utilities.sh
-# shellcheck source=klippy_extras.sh
 source "$SCRIPT_DIR"/klippy_extras.sh
 
 install_printer_config() {
