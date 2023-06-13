@@ -30,6 +30,12 @@ install_dependencies() {
     sudo apt-get update && sudo apt-get install -y "$PKGLIST"
 }
 
+install_theme() {
+    report_status "Installing theme"
+    cd ~ && git clone https://github.com/gethe/mainsail_theme.git
+    sudo -u pi bash ~/mainsail_theme/scripts/install.sh
+}
+
 # Force script to exit if an error occurs
 set -xe
 
@@ -37,6 +43,8 @@ verify_ready
 install_printer_config
 install_udev_rules
 install_dependencies
+
+install_theme
 
 install_gcode_shell_command
 install_ratos_homing
