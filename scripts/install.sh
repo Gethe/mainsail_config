@@ -31,7 +31,7 @@ install_dependencies() {
 install_theme() {
     report_status "Installing theme"
     cd ~ && git clone https://github.com/gethe/mainsail_theme.git
-    sudo -u pi bash ~/mainsail_theme/scripts/install.sh
+    sudo -u pi bash ~/mainsail_theme/install.sh
 }
 
 install_linear_movement() {
