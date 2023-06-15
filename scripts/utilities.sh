@@ -24,8 +24,15 @@ clean_install() {
     rm ~/printer_data/config/sonar.conf
 }
 
+install_hooks() {
+    report_status "Installing git hooks"
+    if [[ ! -e ~/mainsail_theme/.git/hooks/post-merge ]]; then
+        ln -s ~/mainsail_theme/scripts/update.sh ~/mainsail_theme/.git/hooks/post-merge
+    fi
+}
+
 install_printer_config() {
-    report_status "Copying printer configuration"
+    report_status "Installing printer configuration"
 
     rm ~/printer_data/config/printer.cfg
     ln -sf "$SCRIPT_DIR"/../templates/initial-printer.template.cfg ~/printer_data/config/printer_base.cfg

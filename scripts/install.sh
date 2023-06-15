@@ -12,6 +12,7 @@ set -xe
 verify_ready
 clean_install
 
+install_hooks
 install_printer_config
 install_udev_rules
 install_dependencies
