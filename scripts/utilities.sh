@@ -11,6 +11,53 @@ verify_ready() {
     fi
 }
 
+clean_install() {
+    report_status "Clean up OS install"
+
+    rm -r ~/mainsail-config
+    rm ~/printer_data/config/main.cfg
+
+    rm -r ~/crowsnest
+    rm ~/printer_data/config/crowsnest.conf
+
+    rm -r ~/sonar
+    rm ~/printer_data/config/sonar.conf
+}
+
+install_printer_config() {
+    report_status "Copying printer configuration"
+
+    rm ~/printer_data/config/printer.cfg
+    ln -sf "$SCRIPT_DIR"/../templates/initial-printer.template.cfg ~/printer_data/config/printer_base.cfg
+    echo "[include printer_base.cfg]" >~/printer_data/config/printer.cfg
+
+    rm ~/printer_data/config/moonraker.conf
+    ln -sf "$SCRIPT_DIR"/../templates/moonraker.template.conf ~/printer_data/config/moonraker_base.conf
+    echo "[include moonraker_base.conf]" >~/printer_data/config/moonraker.conf
+}
+
+install_udev_rules() {
+    report_status "Installing udev rules"
+    sudo ln -sf "$SCRIPT_DIR"/../boards/*/*.rules /etc/udev/rules.d/
+}
+
+install_dependencies() {
+    report_status "Installing dependencies"
+    sudo apt-get update && sudo apt-get install -y "$PKGLIST"
+}
+
+install_theme() {
+    report_status "Installing theme"
+    cd ~ && git clone https://github.com/gethe/mainsail_theme.git
+    sudo -u pi bash ~/mainsail_theme/install.sh
+}
+
+install_linear_movement() {
+    report_status "Installing Klipper Linear Movement"
+    cd ~ && git clone https://github.com/worksasintended/klipper_linear_movement_analysis.git
+    sudo -u pi bash ~/klipper_linear_movement_analysis/install.sh
+}
+
 POLKIT_LEGACY_DIR="/etc/polkit-1/localauthority/50-local.d"
 POLKIT_DIR="/etc/polkit-1/rules.d"
 POLKIT_USR_DIR="/usr/share/polkit-1/rules.d"
