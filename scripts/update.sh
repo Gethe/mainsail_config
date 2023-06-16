@@ -6,5 +6,4 @@ source "$SCRIPT_DIR"/utilities.sh
 # Force script to exit if an error occurs
 set -xe
 
-install_hooks
-clean_install
+report_status "Applying updates..."
