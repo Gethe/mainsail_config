@@ -14,13 +14,13 @@ verify_ready() {
 clean_install() {
     report_status "Clean up OS install"
 
-    rm -r ~/mainsail-config
-    rm ~/printer_data/config/main.cfg
+    rm -rf ~/mainsail-config
+    rm ~/printer_data/config/mainsail.cfg
 
-    rm -r ~/crowsnest
+    rm -rf ~/crowsnest
     rm ~/printer_data/config/crowsnest.conf
 
-    rm -r ~/sonar
+    rm -rf ~/sonar
     rm ~/printer_data/config/sonar.conf
 }
 
