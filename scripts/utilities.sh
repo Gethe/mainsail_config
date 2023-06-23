@@ -24,6 +24,8 @@ clean_install() {
     rm ~/printer_data/config/sonar.conf
 
     rm ~/printer_data/config/timelapse.cfg
+
+    git config --global pull.ff only
 }
 
 install_hooks() {
