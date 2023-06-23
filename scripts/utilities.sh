@@ -15,15 +15,15 @@ clean_install() {
     report_status "Clean up OS install"
 
     rm -rf ~/mainsail-config
-    rm ~/printer_data/config/mainsail.cfg
+    rm -f ~/printer_data/config/mainsail.cfg
 
     rm -rf ~/crowsnest
-    rm ~/printer_data/config/crowsnest.conf
+    rm -f ~/printer_data/config/crowsnest.conf
 
     rm -rf ~/sonar
-    rm ~/printer_data/config/sonar.conf
+    rm -f ~/printer_data/config/sonar.conf
 
-    rm ~/printer_data/config/timelapse.cfg
+    rm -f ~/printer_data/config/timelapse.cfg
 
     git config --global pull.ff only
 }
@@ -38,11 +38,11 @@ install_hooks() {
 install_printer_config() {
     report_status "Installing printer configuration"
 
-    rm ~/printer_data/config/printer.cfg
+    rm -f ~/printer_data/config/printer.cfg
     ln -sf "$SCRIPT_DIR"/../templates/initial-printer.template.cfg ~/printer_data/config/printer_base.cfg
     echo "[include printer_base.cfg]" >~/printer_data/config/printer.cfg
 
-    rm ~/printer_data/config/moonraker.conf
+    rm -f ~/printer_data/config/moonraker.conf
     ln -sf "$SCRIPT_DIR"/../templates/moonraker.template.conf ~/printer_data/config/moonraker_base.conf
     echo "[include moonraker_base.conf]" >~/printer_data/config/moonraker.conf
 }
