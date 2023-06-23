@@ -54,7 +54,8 @@ install_udev_rules() {
 
 install_dependencies() {
     report_status "Installing dependencies"
-    sudo apt-get update && sudo apt-get install -y "$PKGLIST"
+    # shellcheck disable=SC2086
+    sudo apt-get update && sudo apt-get install -y $PKGLIST
 }
 
 install_theme() {
