@@ -20,7 +20,7 @@ install_dependencies
 install_theme
 install_linear_movement
 
-install_gcode_shell_command
+install_kiauh
 install_ratos_homing
 
 ensure_moonraker_policiykit_rules

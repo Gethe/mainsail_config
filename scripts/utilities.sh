@@ -67,6 +67,12 @@ install_linear_movement() {
     sudo -u pi bash ~/klipper_linear_movement_analysis/install.sh
 }
 
+install_kiauh() {
+    report_status "Installing KIAUH"
+    cd ~ && git clone https://github.com/th33xitus/kiauh.git
+    sudo -u pi bash ~/kiauh/kiauh.sh
+}
+
 POLKIT_LEGACY_DIR="/etc/polkit-1/localauthority/50-local.d"
 POLKIT_DIR="/etc/polkit-1/rules.d"
 POLKIT_USR_DIR="/usr/share/polkit-1/rules.d"
