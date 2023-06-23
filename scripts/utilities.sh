@@ -30,9 +30,9 @@ clean_install() {
 
 install_hooks() {
     report_status "Installing git hooks"
-    if [[ ! -e "$SCRIPT_DIR"/../.git/hooks/post-merge ]]; then
-        ln -sf "$SCRIPT_DIR"/../scripts/update.sh "$SCRIPT_DIR"/../.git/hooks/post-merge
-        sudo chmod +x "$SCRIPT_DIR"/../.git/hooks/post-merge
+    if [[ ! -e ~/mainsail_config/.git/hooks/post-merge ]]; then
+        ln -sf ~/mainsail_config/scripts/update.sh ~/mainsail_config/.git/hooks/post-merge
+        sudo chmod +x ~/mainsail_config/.git/hooks/post-merge
     fi
 }
 
@@ -40,17 +40,17 @@ install_printer_config() {
     report_status "Installing printer configuration"
 
     rm -f ~/printer_data/config/printer.cfg
-    ln -sf "$SCRIPT_DIR"/../templates/initial-printer.template.cfg ~/printer_data/config/printer_base.cfg
+    ln -sf ~/mainsail_config/templates/initial-printer.template.cfg ~/printer_data/config/printer_base.cfg
     echo "[include printer_base.cfg]" >~/printer_data/config/printer.cfg
 
     rm -f ~/printer_data/config/moonraker.conf
-    ln -sf "$SCRIPT_DIR"/../templates/moonraker.template.conf ~/printer_data/config/moonraker_base.conf
+    ln -sf ~/mainsail_config/templates/moonraker.template.conf ~/printer_data/config/moonraker_base.conf
     echo "[include moonraker_base.conf]" >~/printer_data/config/moonraker.conf
 }
 
 install_udev_rules() {
     report_status "Installing udev rules"
-    sudo ln -sf "$SCRIPT_DIR"/../boards/*/*.rules /etc/udev/rules.d/
+    sudo ln -sf ~/mainsail_config/boards/*/*.rules /etc/udev/rules.d/
 }
 
 install_dependencies() {

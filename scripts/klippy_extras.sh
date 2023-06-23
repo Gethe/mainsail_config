@@ -24,12 +24,6 @@ install_klippy_extension() {
     fi
 }
 
-install_gcode_shell_command() {
-    EXT_NAME="gcode_shell_extension"
-    EXT_FILE="gcode_shell_command.py"
-    install_klippy_extension $EXT_NAME "$KLIPPY_PATH" $EXT_FILE
-}
-
 install_ratos_homing() {
     EXT_NAME="ratos_homing_extension"
     EXT_FILE="ratos_homing.py"

@@ -1,10 +1,11 @@
 #!/bin/bash
 
-SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 PKGLIST="python3-numpy python3-matplotlib jq curl"
 
-source "$SCRIPT_DIR"/utilities.sh
-source "$SCRIPT_DIR"/klippy_extras.sh
+# shellcheck source=utilities.sh
+source ~/mainsail_config/scripts/utilities.sh
+# shellcheck source=klippy_extras.sh
+source ~/mainsail_config/scripts/klippy_extras.sh
 
 # Force script to exit if an error occurs
 set -xe
