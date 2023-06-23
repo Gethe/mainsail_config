@@ -22,6 +22,8 @@ clean_install() {
 
     rm -rf ~/sonar
     rm ~/printer_data/config/sonar.conf
+
+    rm ~/printer_data/config/timelapse.cfg
 }
 
 install_hooks() {
