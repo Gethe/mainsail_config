@@ -32,6 +32,7 @@ install_hooks() {
     report_status "Installing git hooks"
     if [[ ! -e "$SCRIPT_DIR"/../.git/hooks/post-merge ]]; then
         ln -sf "$SCRIPT_DIR"/../scripts/update.sh "$SCRIPT_DIR"/../.git/hooks/post-merge
+        sudo chmod +x "$SCRIPT_DIR"/../.git/hooks/post-merge
     fi
 }
 
