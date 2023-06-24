@@ -36,12 +36,35 @@ install_hooks() {
     fi
 }
 
+PRINTER=$(cat <<-END
+[include printer_base.cfg]
+
+#[gcode_macro VARS]
+
+[mcu]
+serial: /dev/serial/by-id/usb-Klipper_stm32f103xe_35FFDA054246303244701157-if00
+
+[extruder]
+control: pid
+pid_kp: 28.413
+pid_ki: 1.334
+pid_kd: 151.300
+
+[heater_bed]
+control: pid
+pid_Kp: 22.2
+pid_Ki: 1.08
+pid_Kd: 114
+
+END
+
+)
 install_printer_config() {
     report_status "Installing printer configuration"
 
     rm -f ~/printer_data/config/printer.cfg
     ln -sf ~/mainsail_config/templates/initial-printer.template.cfg ~/printer_data/config/printer_base.cfg
-    echo "[include printer_base.cfg]" >~/printer_data/config/printer.cfg
+    echo "$PRINTER" >~/printer_data/config/printer.cfg
 
     rm -f ~/printer_data/config/moonraker.conf
     ln -sf ~/mainsail_config/templates/moonraker.template.conf ~/printer_data/config/moonraker_base.conf
